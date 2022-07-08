@@ -1,0 +1,44 @@
+---
+import Page from "@layouts/page";
+import elkhorn from "@assets/pics/elkhorn.webp"
+import bull from "@assets/pics/bull.webp"
+import canon from "@assets/pics/canon.webp"
+import frink from "@assets/pics/frink.webp"
+import kananaskis from "@assets/pics/kananaskis.webp"
+import mary from "@assets/pics/mary.webp"
+import snow from "@assets/pics/snow.webp"
+import tunnel from "@assets/pics/tunnel.webp"
+import wells from "@assets/pics/wells.webp"
+
+
+---
+
+<Page title="Photography">
+    <div class="flex flex-col w-full space-y-12">
+        <div class="flex w-full px-3 justify-evenly">
+            <img class="w-96 h-auto" src={wells} />
+
+        </div>
+        <div class="flex w-full px-3">
+            <img class="h-96 w-auto" src={elkhorn} />
+
+        </div>
+        <div class="flex w-full px-3 justify-evenly">
+            <img class="h-96 w-auto" src={mary} />
+            <img class="h-96 w-auto" src={snow} />
+        </div>
+        <div class="flex w-full px-3 justify-evenly">
+            <img class="h-96 w-auto" src={bull} />
+            <img class="h-96 w-auto" src={frink} />
+        </div>
+        <div class="flex w-full px-3">
+            <img class="h-96 w-auto" src={canon} />
+
+        </div>
+        <div class="flex w-full px-3 justify-evenly">
+            <img class="h-96 w-auto" src={kananaskis} />
+            <img class="h-96 w-auto" src={tunnel} />
+        </div>
+
+    </div>
+</Page>

@@ -1,0 +1,53 @@
+---
+import { nav } from "@data/nav"
+import logoUrl from "@assets/dblogo.png"
+---
+
+<div
+  class="fixed bg-gradient-to-b from-base-100 to-transparent w-full max-w-3xl pb-16 pointer-events-none">
+
+  <div class="navbar w-full pointer-events-auto">
+    <div class="flex-1">
+      <a href="/"
+        class="p-2 hover:underline md:text-2xl font-bold flex gap-4 items-center">
+        <img src={logoUrl} width="48" height="48" alt="Dylan Brown"
+          class=" md:w-12 md:h-12 w-9 h-9">
+        Dylan Brown
+      </a>
+    </div>
+    <div class="flex space-x-2">
+      <div class="space-x-2 p-0 hidden md:flex">
+        {nav.map(item => (
+        <a href={item.slug}>
+          <button class="btn-ghost btn text-base font-normal capitalize">
+            {item.title}
+          </button>
+        </a>
+
+        ))}
+      </div>
+      <slot />
+      <div class="dropdown dropdown-end md:hidden">
+        <label tabindex={0} class="btn btn-ghost btn-square">
+          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-menu">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </label>
+        <ul tabindex={0}
+          class="dropdown-content menu p-2 bg-base-200 rounded-box w-52 menu-compact">
+          {nav.map(item => (
+          <li>
+            <a href={item.slug}>{item.title}</a>
+          </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>

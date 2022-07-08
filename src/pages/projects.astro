@@ -1,0 +1,17 @@
+---
+import { published } from "@data/project"
+import Page from "@layouts/project";
+import Project from "@components/projects/project";
+
+
+const markdownFiles = await Astro.glob('../content/projects/**/*.md')
+const projects = published(markdownFiles)
+
+---
+
+<Page title="Projects">
+    <h1 class="text-2xl font-bold mb-4">Software Projects</h1>
+    {projects.map(p => (
+    <Project project={p} />
+    ))}
+</Page>

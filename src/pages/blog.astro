@@ -1,0 +1,16 @@
+---
+import { published } from "@data/post"
+import Blog from "@layouts/blog";
+import Preview from "@components/blog/preview";
+
+const markdownFiles = await Astro.glob('../content/blog/**/*.md')
+const posts = published(markdownFiles);
+---
+
+<Blog>
+    <div>
+        {posts.map((p) =>
+        <Preview post={p} />)}
+        {posts.length === 0 && <p>😢 No posts yet, come back later.</p>}
+    </div>
+</Blog>
