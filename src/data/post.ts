@@ -38,7 +38,7 @@ export function getRSS(posts: MarkdownInstance[]) {
 		title: 'Dylans Blog',
 		description: 'A blog that I write about everything',
 		stylesheet: true,
-		site: import.meta.env.SITE,
+		site: import.meta.env.SITE || 'https://dylanbrown.space',
 		customData: `<language>en-us</language>`,
 		items: published(posts).map((post: Post) => ({
 			title: post.title,

@@ -1,5 +1,4 @@
 ---
-import "../../style/tailwind.css"
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import ThemeChange from "@components/ThemeChange";
@@ -9,11 +8,9 @@ const { desc } = Astro.props;
 const { img } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" data-theme="winter">
 
 <Head title={title} desc={desc} img={img}>
-	<script
-		src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
@@ -37,3 +34,19 @@ const { img } = Astro.props;
 </body>
 
 </html>
+
+
+<script is:inline>
+
+	function toggleDarkMode() {
+		document.documentElement.dataset.theme = document.documentElement.dataset.theme === "winter" ? "night" : "winter";
+		localStorage.theme = document.documentElement.dataset.theme === "winter" ? "light" : "dark";
+	}
+	window.toggleDarkMode = toggleDarkMode
+	if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		document.documentElement.dataset.theme = "night"
+	} else {
+		document.documentElement.dataset.theme = "winter"
+	}
+
+</script>

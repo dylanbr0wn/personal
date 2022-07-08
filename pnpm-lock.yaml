@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@astrojs/rss': ^0.2.0
   '@astrojs/sitemap': ^0.1.0
+  '@astrojs/tailwind': ^0.2.2
   '@tailwindcss/typography': ^0.5.2
   astro: ^1.0.0-beta.2
   autoprefixer: ^10.4.7
@@ -11,13 +12,14 @@ specifiers:
   rehype-slug: ^5.0.1
   shiki: ^0.10.1
   tailwindcss: ^3.0.23
-  theme-change: ^2.0.2
+  theme-change: ^2.1.0
 
 dependencies:
   '@astrojs/rss': 0.2.0
 
 devDependencies:
   '@astrojs/sitemap': 0.1.2
+  '@astrojs/tailwind': 0.2.2
   '@tailwindcss/typography': 0.5.3_tailwindcss@3.1.5
   astro: 1.0.0-beta.64
   autoprefixer: 10.4.7
@@ -127,6 +129,17 @@ packages:
       svelte2tsx: 0.5.11_ueozcsexptisi2awlbuwt6eqmq
     transitivePeerDependencies:
       - typescript
+    dev: true
+
+  /@astrojs/tailwind/0.2.2:
+    resolution: {integrity: sha512-0h32udM1+CNl0Jw1F/mwJJzhKWlYAAnrCTwk5+56aE6Q/cLNaJrSuxgArREtEGQoX2Fk+pJcbq4BPey0EP6VPA==}
+    dependencies:
+      '@proload/core': 0.3.2
+      autoprefixer: 10.4.7_postcss@8.4.14
+      postcss: 8.4.14
+      tailwindcss: 3.1.5
+    transitivePeerDependencies:
+      - ts-node
     dev: true
 
   /@astrojs/telemetry/0.2.4:
@@ -750,6 +763,22 @@ packages:
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
+      postcss-value-parser: 4.2.0
+    dev: true
+
+  /autoprefixer/10.4.7_postcss@8.4.14:
+    resolution: {integrity: sha512-ypHju4Y2Oav95SipEcCcI5J7CGPuvz8oat7sUtYj3ClK44bldfvtvcxK6IEK++7rqB7YchDGzweZIBG+SD0ZAA==}
+    engines: {node: ^10 || ^12 || >=14}
+    hasBin: true
+    peerDependencies:
+      postcss: ^8.1.0
+    dependencies:
+      browserslist: 4.21.1
+      caniuse-lite: 1.0.30001363
+      fraction.js: 4.2.0
+      normalize-range: 0.1.2
+      picocolors: 1.0.0
+      postcss: 8.4.14
       postcss-value-parser: 4.2.0
     dev: true
 
