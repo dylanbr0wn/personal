@@ -16,7 +16,7 @@ import logoUrl from "@assets/dblogo.png"
       </a>
     </div>
     <div class="flex space-x-2">
-      <div class="space-x-2 p-0 ">
+      <div class="space-x-2 p-0 hidden md:block">
         {nav.map(item => (
         <a href={item.slug}>
           <button class="btn-ghost btn text-base font-normal capitalize">
@@ -39,7 +39,7 @@ import logoUrl from "@assets/dblogo.png"
           </svg>
         </label>
         <ul tabindex={0}
-          class="dropdown-content menu p-2 bg-base-200 rounded-box w-52 menu-compact">
+          class="dropdown-content menu p-2 bg-base-300 rounded-box w-52 menu-compact">
           {nav.map(item => (
           <li>
             <a href={item.slug}>{item.title}</a>
