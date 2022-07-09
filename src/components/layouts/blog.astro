@@ -36,13 +36,16 @@ const { img } = Astro.props;
 <script is:inline>
 
 	function toggleDarkMode() {
+		document.getElementById("theme-button").classList.toggle("swap-active");
 		document.documentElement.dataset.theme = document.documentElement.dataset.theme === "winter" ? "night" : "winter";
 		localStorage.theme = document.documentElement.dataset.theme === "winter" ? "light" : "dark";
 	}
 	window.toggleDarkMode = toggleDarkMode
 	if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
 		document.documentElement.dataset.theme = "night"
+		document.getElementById("theme-button").classList.remove("swap-active");
 	} else {
+		document.getElementById("theme-button").classList.add("swap-active");
 		document.documentElement.dataset.theme = "winter"
 	}
 
